@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marlowe SMP | Crystal Gems</title>
+    <link rel="stylesheet" href="rank-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Specific overrides for the Gems Page Teal Theme */
+        .category-banner.gems-theme {
+            background: #00acc1; /* Vibrant Teal to match Image 4 */
+        }
+
+        .bundle-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .bundle-header h2 {
+            font-size: 28px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -1px;
+            color: #fff;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .bundle-header p {
+            font-size: 11px;
+            color: #64748b; 
+            max-width: 450px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        /* Center the 3-item grid for Gems */
+        .gems-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        /* PIXEL PERFECT UI FIX FOR QTY-ROW */
+        .qty-row {
+            display: flex;
+            justify-content: center;
+            gap: 6px; /* Precise spacing from your screenshot */
+            margin-bottom: 12px;
+        }
+
+        .qty-pill {
+            background: rgba(255, 255, 255, 0.1); /* Darker transparent box */
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+            padding: 5px 10px;
+            border-radius: 4px; /* Slight rounding to match image */
+            font-size: 11px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-width: 40px;
+        }
+
+        .qty-pill.active {
+            background: #3b82f6 !important; /* Marlowe Blue */
+            border-color: #3b82f6;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+        }
+
+        .qty-pill:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive adjustment for mobile */
+        @media (max-width: 768px) {
+            .gems-grid {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+
+    <main class="container">
+        <header class="category-banner gems-theme">
+            <div class="banner-content">
+                <a href="index.html" class="back-btn">← BACK</a>
+                <div style="text-align: center;">
+                    <span style="font-size: 10px; letter-spacing: 2px; font-weight: 800; opacity: 0.8;">VIRTUAL CURRENCY</span>
+                    <h1 style="margin: 0;">GEMS</h1>
+                </div>
+                <button class="info-btn">ⓘ INFO</button>
+            </div>
+        </header>
+
+        <div class="bundle-header">
+            <h2>NETWORK BUNDLES</h2>
+            <p>Gems are a global currency used to unlock cosmetics and items across all realms.</p>
+        </div>
+
+        <div class="gems-grid">
+            <div class="rank-card">
+                <div class="rank-art">
+                    <img src="assets/image/GEMS/gems_small.png" alt="100 Gems">
+                </div>
+                <h3>100 GEMS</h3>
+                <div class="price">$0.99</div>
+                
+                <div class="qty-row">
+                    <button class="qty-pill active">1X</button>
+                    <button class="qty-pill">5X</button>
+                    <button class="qty-pill">10X</button>
+                    <button class="qty-pill">25X</button>
+                </div>
+                
+                <button class="cart-btn">🛒 ADD TO CART</button>
+            </div>
+
+            <div class="rank-card">
+                <div class="popular-tag">★ POPULAR</div>
+                <div class="rank-art">
+                    <img src="assets/image/GEMS/gems_medium.png" alt="1,000 Gems">
+                </div>
+                <h3>1,000 GEMS</h3>
+                <div class="price">$8.99</div>
+                
+                <div class="qty-row">
+                    <button class="qty-pill active">1X</button>
+                    <button class="qty-pill">5X</button>
+                    <button class="qty-pill">10X</button>
+                    <button class="qty-pill">25X</button>
+                </div>
+                
+                <button class="cart-btn">🛒 ADD TO CART</button>
+            </div>
+
+            <div class="rank-card">
+                <div class="rank-art">
+                    <img src="assets/image/GEMS/gems_large.png" alt="5,000 Gems">
+                </div>
+                <h3>5,000 GEMS</h3>
+                <div class="price">$39.99</div>
+                
+                <div class="qty-row">
+                    <button class="qty-pill active">1X</button>
+                    <button class="qty-pill">5X</button>
+                    <button class="qty-pill">10X</button>
+                    <button class="qty-pill">25X</button>
+                </div>
+                
+                <button class="cart-btn">🛒 ADD TO CART</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.querySelectorAll('.qty-pill').forEach(pill => {
+            pill.addEventListener('click', function() {
+                // Find the parent card to limit the toggle to this specific item
+                const parent = this.parentElement;
+                parent.querySelectorAll('.qty-pill').forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
